@@ -1,0 +1,82 @@
+pseudo code below;
+
+initialize music player 
+
+initialize playlist 
+
+initialize tracklist 
+
+initialize repeat function 
+
+initialize search function 
+
+initialize add/remove function 
+
+
+
+play music player 
+
+play tracks from playlist 
+
+repeat tracks as necessary 
+
+search for specific tracks 
+
+add/remove tracks as necessary
+
+exit
+
+end
+
+THE JAVA CODE
+public class MusicApp {
+    public static void main(String[] args) {
+
+        PlaylistBusinessBean app = new PlaylistBusinessBean(new PlaylistDaoBean(new Playlist1()),
+                new Playlist1());
+
+        //Add tracks
+        List<Track> tracksToAdd = new ArrayList<Track>();
+        for (int i = 0; i < 20; i++) {
+            tracksToAdd.add(Playlist1.getTrack());
+        }
+
+        int toIndex = 10;
+
+        String playlistDS = DS.randomDS().toString();
+        app.addTracks(playlistDS, tracksToAdd, toIndex);
+        System.out.println("Tracks added to playlist: " + playlistDS);
+
+        //Play the playlist
+        System.out.println("Fetching playlist uuid: " + playlistDS);
+        Playlist list = app.getPlaylist(playlistDS);
+        System.out.println("No. of tracks: " + list.getNrOfTracks());
+
+       //Delete a track
+        System.out.println("Removing songs from playlist:...");
+        List<Integer> indexes = Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11);
+        app.removeTracks(playlistUUID, indexes);
+        System.out.println("Playlist updated...");
+        System.out.println("No. of tracks after removing: " + list.getNrOfTracks());
+
+    }
+
+//Searching for a song
+If End =Null Then
+	Print: “PlayList is empty”
+	Exit
+
+Set Pointer = End;
+Repeat While (Pointer = Null)
+	If Pointer -> Info = Song Then
+		Print “Element Track is found at address ” :Pointer
+			Exit
+ELSE
+	Set Pointer = Pointer -> Prev
+ENDIF
+Print “Element track is not found in the linked list”
+
+Exit
+
+
+}
